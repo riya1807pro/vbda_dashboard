@@ -6,8 +6,8 @@ export default function CreateInvitation() {
   const [role, setRole] = useState('')
   const [company, setCompany] = useState('')
   const [achievement, setAchievement] = useState('')
-  const [emailText, setEmailText] = useState('')
-  const [loading, setLoading] = useState(false)
+  const [emailText] = useState('')
+  const [loading] = useState(false)
   const [recipients, setRecipients] = useState('')
 
   // interface GenerateRequestBody {
