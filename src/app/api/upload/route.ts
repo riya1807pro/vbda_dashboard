@@ -5,13 +5,24 @@ export async function POST(req: NextRequest) {
   const formData = await req.formData();
   const file = formData.get("file") as File;
 
+  if (!file) {
+    return NextResponse.json({ error: "No file uploaded" }, { status: 400 });
+  }
+
   const buffer = Buffer.from(await file.arrayBuffer());
   const csv = buffer.toString("utf-8");
 
-  const records = parse(csv, {
-    columns: true,
-    skip_empty_lines: true,
-  });
+  console.log("CSV Data:", csv); // Log the CSV content to check for issues
 
-  return NextResponse.json({ recipients: records });
+  try {
+    const records = parse(csv, {
+      columns: true,
+      skip_empty_lines: true,
+    });
+
+    return NextResponse.json({ recipients: records });
+  } catch (error) {
+    console.error("CSV Parsing Error:", error);
+    return NextResponse.json({ error: "Failed to parse CSV" }, { status: 500 });
+  }
 }

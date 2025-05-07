@@ -19,11 +19,14 @@
     "dotenv": "^16.5.0",
     "drizzle-orm": "^0.43.1",
     "next": "15.3.1",
+    "nodemailer": "^7.0.2",
     "openai": "^4.97.0",
+    "papaparse": "^5.5.2",
     "pg": "^8.15.6",
     "postcss": "^8.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "resend": "^4.5.1",
     "zod": "^3.24.4"
   },
   "devDependencies": {
@@ -31,6 +34,7 @@
     "@tailwindcss/postcss": "^4.1.5",
     "@types/csv-parse": "^1.1.12",
     "@types/node": "^20",
+    "@types/nodemailer": "^6.4.17",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "drizzle-kit": "^0.31.1",
